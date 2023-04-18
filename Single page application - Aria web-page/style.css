@@ -20,13 +20,12 @@
 
 html {
   font-size: 62.5%;
-  overflow: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
 }
 
 html::-webkit-scrollbar {
-  width: 0.6rem;
+  width: 1rem;
 }
 
 html::-webkit-scrollbar-track {
@@ -38,45 +37,54 @@ html::-webkit-scrollbar-thumb {
 }
 
 section {
-    padding: 3rem 7%;
+  padding: 3rem 7%;
+  margin-bottom: 12rem;
+}
+
+.heading {
+  font-size: 5rem;
+  margin-top: 4rem;
+  margin-bottom: 9rem;
+  color: var(--primary-color);
+  text-align: center;
 }
 
 .btn {
-    margin-top: 1rem;
-    background: var(--primary-color);
-    color: #fff;
-    display: inline-block;
-    border-radius: 5rem;
-    box-shadow: var(--box-shadow);
-    padding: 1rem 4rem;
-    font-size: 1.7rem;
-    position: relative;
-    overflow: hidden;
+  margin-top: 1rem;
+  background: var(--primary-color);
+  color: #fff;
+  display: inline-block;
+  border-radius: 5rem;
+  box-shadow: var(--box-shadow);
+  padding: 1rem 4rem;
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn::before,
 .btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 0%;
-    background: #bd394c;
-    z-index: -1;
-    transition: .3 linear;
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: #bd394c;
+  z-index: -1;
+  transition: 0.3 linear;
 }
 
 .btn:hover::before,
 .btn:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .btn::before {
-    left: 0;
+  left: 0;
 }
 
 .btn::after {
-    right: 0;
+  right: 0;
 }
 
 /* header */
@@ -100,17 +108,17 @@ section {
   align-items: center;
 }
 
-#head .logo-container .artist-name {
-  font-size: 2rem;
+#head .logo-container .name {
+  font-size: 3rem;
   font-weight: bolder;
 }
 
-#head .logo {
-  width: 5rem;
+#head .logo-container .logo {
+  width: 7rem;
 }
 
 #head .navbar a {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--black);
   margin-left: 2rem;
 }
@@ -125,38 +133,174 @@ section {
   color: var(--black);
 }
 
-#hero {
+/* hero section */
+
+#home {
   display: flex;
   align-items: center;
   background: url(./images/300.jpg) no-repeat;
-  min-height: 110vh;
+  min-height: 90vh;
   background-size: cover;
   background-position: center;
+  position: relative;
+  bottom: -10rem;
 }
 
-#hero::before {
+#home::before {
   content: "";
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 115vh;
+  height: 90vh;
   background-color: black;
   opacity: 0.5;
 }
 
-#hero .content {
-    max-width: 60rem;
-    z-index: 1;
+#home .content {
+  max-width: 60rem;
+  z-index: 1;
 }
 
-#hero .content h3 {
-    font-size: 8rem;
-    color: #fff;
-    line-height: 1.2;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .5rem;
-    padding-bottom: 2rem;
+#home .content h3 {
+  font-size: 8rem;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+/* about */
+
+.about .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about .row .content {
+  flex: 1 1 40rem;
+}
+
+.about .row .content h3 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  padding: 1rem 0;
+}
+
+.about .row .content p {
+  text-transform: none;
+  font-size: 2rem;
+  color: var(--black);
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.about ul li {
+  font-size: 1.7rem;
+  color: var(--main-color);
+  padding-top: 1.5rem;
+}
+
+.about ul li i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  padding-right: 1rem;
+}
+
+.about .row .content .btn {
+  margin: 3rem 0;
+}
+
+.about .row .image {
+  flex: 1 1 30rem;
+}
+
+.about .row .image img {
+  width: 75%;
+  margin-left: 7rem;
+}
+
+/* songs */
+
+.songs {
+  background: #f0f4ff;
+}
+
+.songs .box-container .box .image {
+  position: relative;
+  overflow: hidden;
+  content: "";
+}
+
+.songs .box-container .box .image img {
+  width: 40rem;
+  height: 40rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.songs .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.songs .box-container .box .image:hover .share {
+  display: block;
+  width: 7rem;
+  height: 38rem;
+  position: absolute;
+  left: 12rem;
+  top: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.7rem;
+}
+
+.songs .box-container .box .image:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.songs .box-container .box .image .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2.2rem;
+  color: #fff;
+  border: 0.2rem solid #fff;
+  text-align: center;
+  position: absolute;
+}
+
+.songs .box-container .box .image .share a:hover {
+  background: #fff;
+  color: var(--black);
+}
+
+.songs .box-container .box .content {
+  padding-top: 1rem;
+}
+
+.songs .box-container .box .content p {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.songs .box-container .box .content p:first-child {
+  font-weight: bold;
 }
