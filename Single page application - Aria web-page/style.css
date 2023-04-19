@@ -304,3 +304,34 @@ section {
 .songs .box-container .box .content p:first-child {
   font-weight: bold;
 }
+
+.gallery {
+  background: #f0f4ff;
+}
+
+.gallery .controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.gallery .controls li {
+  height: 4rem;
+  width: 16rem;
+  background: #fff;
+  color: var(--primary-color);
+  font-size: 2rem;
+  line-height: 4rem;
+  cursor: pointer;
+  margin: 1rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.gallery .controls .button.active {
+  background: var(--main-color);
+  color: #fff;
+}
+
