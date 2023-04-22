@@ -530,8 +530,28 @@ section {
   }
 }
 
+@media (max-width: 598px) {
+  .box {
+    margin-left: 10rem;
+  }
+} 
+
+@media (max-width: 590px) {
+  #home .content h3 {
+    font-size: 5rem;
+  }
+
+  .about .row .image img {
+    margin-left: 6rem;
+  }
+}
+
 @media (max-width: 450px) {
   html{
     font-size: 50%;
+  }
+
+  .box {
+    margin-left: unset;
   }
 }
